@@ -12,8 +12,19 @@ fun main() {
   println(getTriangleArea())
   println(getTriangleArea(height = 10.0))
   sayHello("Masao")
+  val (sum, average) = getSumAverage(3, 4, 8, 1)
+  println("${sum} : ${average}")
 }
 
+fun getSumAverage(vararg values: Int): Pair<Int, Double> {
+  var result = 0
+  var count = 0.0
+  for (value in values) {
+    result += value
+    count ++
+  }
+  return Pair(result, result / count)
+}
 
 fun sayHello (name: String): Unit {
   println("Hello, ${name}.")
